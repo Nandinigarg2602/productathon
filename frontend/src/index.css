@@ -1,0 +1,42 @@
+@import "tailwindcss";
+
+@theme {
+  --color-hpcl-blue: #0c2340;
+  --color-hpcl-red: #e31837;
+  --color-hpcl-red-light: #ff4d6a;
+  --color-surface: #f1f5f9;
+  --font-sans: 'Inter', system-ui, sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-sans);
+  background: var(--color-surface);
+  color: #1e293b;
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+#root {
+  min-height: 100vh;
+}
+
+/* Subtle card glow on hover */
+.card-glow:hover {
+  box-shadow: 0 20px 40px -12px rgba(12, 35, 64, 0.08), 0 0 0 1px rgba(12, 35, 64, 0.04);
+}
+
+/* Verification badge pulse */
+@keyframes verified-pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.85; }
+}
+
+.verified-badge {
+  animation: verified-pulse 2s ease-in-out infinite;
+}
